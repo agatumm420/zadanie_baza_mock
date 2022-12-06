@@ -14,5 +14,10 @@ class Client extends Model
        return $this->belongsToMany(Invoice::class,'clients_invoices', 'client_id', 'invoice_id');
 
     }
+    public function receipts()
+    {
+       return $this->belongsToMany(Receipt::class,'clients_receipts', 'client_id', 'receipt_id');
+
+    }
 
 }

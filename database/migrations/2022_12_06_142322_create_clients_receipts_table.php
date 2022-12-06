@@ -13,19 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('clients_invoices', function (Blueprint $table) {
+        Schema::create('clients_receipts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->foreignId('client_id')
                     ->constrained()
 
                     ->onUpdate('cascade')
                     ->onDelete('cascade');
-            $table->foreignId('invoice_id')
+            $table->foreignId('receipt_id')
                     ->constrained()
 
                     ->onUpdate('cascade')
                     ->onDelete('cascade');
-
         });
     }
 
