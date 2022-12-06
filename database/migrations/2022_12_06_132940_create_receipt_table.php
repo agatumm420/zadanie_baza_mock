@@ -26,6 +26,7 @@ return new class extends Migration
             $atble->string('vendor_phone');
             $table->bigInteger('invoice_number');
             $table->tinyInteger('payment');// 0-karta , 1- gotówka
+            $table->boolean('active');
             $atble->bigInteger('card_number')->nullable();
             $table->foreignId('client_id')->nullable()
                     ->constrained()
