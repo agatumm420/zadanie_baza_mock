@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name'); //- nazwa pliku-nip-data wystawienia-
-            $table->boolean('status');//error status 0-nie przeszło 1- przeszło
+            $table->boolean('status');//error status 0-nie przeszło 1- przeszło errory będą logowane z nazwą pliku
             $table->string('file_name');
             $table->dateTime('invoice_date');
             $table->dateTime('success_date')->nullable();

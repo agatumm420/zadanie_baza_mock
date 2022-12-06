@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('street');
             $table->string('zip_code');
             $table->string('city');
-            $table->boolean('scan_check');
+            $table->boolean('scan_check'); //oznacza czy przeszli ten background screening
             $table->timestamps();
         });
     }
