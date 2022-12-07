@@ -10,9 +10,9 @@ class Invoice extends Model
 
     use HasFactory;
     protected $fillable=['name', 'status', 'file_name', 'invoice_date', 'success_date','payee_name', "payee_tax_nr" , "payee_country", "payer_name","payer_tax_nr",  "payer_country", 'due_date', 'issue_date','purchase_date', "rate", 'gross', 'net', 'vat', 'currency', 'account_nr', 'invoice_nr','is_optima', 'is_filed','ative' , 'verified_with', 'is_recieved' ];
-    public function clients()
+    public function client()
     {
-       return $this->belongsToMany(Client::class,'clients_invoices', 'invoice_id', 'client_id');
+       return $this->belongsTo(Client::class);
 
     }
     public function scopeRecived($query){

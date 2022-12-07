@@ -9,9 +9,9 @@ class Receipt extends Model
 {
     use HasFactory;
     protected $fillable=['name', 'purchase_date', 'status', 'total', 'tax', 'vendor_nip', 'vendor_name', 'vendor_adress', 'vendor_phone', 'invoice_number', 'payment', 'card_number'];
-    public function clients()
+    public function client()
     {
-       return $this->belongsToMany(Client::class,'clients_receipts', 'receipt_id', 'client_id');
+       return $this->belongsTo(Client::class);
 
     }
 }
